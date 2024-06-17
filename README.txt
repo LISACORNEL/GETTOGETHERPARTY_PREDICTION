@@ -1,0 +1,1 @@
+install flask the latest version,sk learn,numpy and pandas then run app.py

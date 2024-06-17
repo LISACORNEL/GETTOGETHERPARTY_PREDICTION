@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Attendance Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #343a40;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            color: #495057;
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Party Attendance Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="DistanceFromVenue">Distance From Venue (miles):</label>
+            <input type="number" id="DistanceFromVenue" name="DistanceFromVenue" required>
+            
+            <label for="Availability">Availability (0 or 1):</label>
+            <input type="number" id="Availability" name="Availability" min="0" max="1" required>
+            
+            <label for="InterestLevel">Interest Level (1-10):</label>
+            <input type="number" id="InterestLevel" name="InterestLevel" min="1" max="10" required>
+            
+            <label for="RelationshipWithHost">Relationship With Host (1-10):</label>
+            <input type="number" id="RelationshipWithHost" name="RelationshipWithHost" min="1" max="10" required>
+            
+            <label for="SocialCircleAttendance">Social Circle Attendance (%):</label>
+            <input type="number" id="SocialCircleAttendance" name="SocialCircleAttendance" min="0" max="100" required>
+            
+            <label for="MaritalStatus">Marital Status (0 or 1):</label>
+            <input type="number" id="MaritalStatus" name="MaritalStatus" min="0" max="1" required>
+            
+            <label for="PersonalInvitation">Personal Invitation (0 or 1):</label>
+            <input type="number" id="PersonalInvitation" name="PersonalInvitation" min="0" max="1" required>
+            
+            <label for="WeatherForecast">Weather Forecast (0 or 1):</label>
+            <input type="number" id="WeatherForecast" name="WeatherForecast" min="0" max="1" required>
+            
+            <label for="PreviousAttendance">Previous Attendance (0 or 1):</label>
+            <input type="number" id="PreviousAttendance" name="PreviousAttendance" min="0" max="1" required>
+            
+            <label for="TransportationAvailability">Transportation Availability (0 or 1):</label>
+            <input type="number" id="TransportationAvailability" name="TransportationAvailability" min="0" max="1" required>
+            
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+    <script defer async>
+        document.addEventListener('DOMContentLoaded', function() {
+          // setting global variables
+          window.botId = 3581
+          
+          // create div with id = sarufi-chatbox
+          const div = document.createElement("div")
+          div.id = "sarufi-chatbox"
+          document.body.appendChild(div)
+      
+          // create and attach script tag
+          const script = document.createElement("script")
+          script.crossOrigin = true
+          script.type = "module"
+          script.src = "https://cdn.jsdelivr.net/gh/flexcodelabs/sarufi-chatbox/example/vanilla-js/script.js"
+          document.head.appendChild(script)
+      
+          // create and attach css
+          const style = document.createElement("link")
+          style.crossOrigin = true
+          style.rel = "stylesheet"
+          style.href = "https://cdn.jsdelivr.net/gh/flexcodelabs/sarufi-chatbox/example/vanilla-js/style.css"
+          document.head.appendChild(style)
+        });
+      </script>
+</body>
+</html>
